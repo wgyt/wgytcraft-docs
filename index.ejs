@@ -1,0 +1,80 @@
+<html lang="en" class="bg-white dark:bg-black dark"><head>
+<!-- MOST META TAGS -->
+<link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS AND JS -->
+<link href="//www.wgyt.tk/css/tailwind.css" rel="stylesheet"></head>
+
+<body>
+  <!-- HEADER -->
+<!-- NAVBAR -->
+<nav class="bg-red-900 p-2 mt-0 sticky w-full z-10 top-0 overflow-x-auto" id="top">
+	<div class="container mx-auto flex flex-wrap items-center">
+		<div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-bold"><a href="/" class="text-white no-underline hover:text-white hover:no-underline font-bold nuxt-link-active"><span class="text-2xl"><img src="/images/logo.webp" height="40" width="48" alt="Wgyt logo" class="h-10 pr-2 inline-block">Wgytcraft docs</span></a>
+			</div>
+		</div>
+	</nav>
+  <!-- ARTICLE -->
+  <div class="bg-gray-200">
+  <article class="prose mx-auto ">
+	<%= html %>
+  </article>
+  </div>
+	<!-- FOOTER -->
+<!-- FOOTER -->
+<button class="rounded-full bg-red-900 fixed bottom-0 right-0 h-16 w-16" id="toggle"><svg id="light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff" style="display: none;">
+  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+</svg><svg id="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff" style="display: block;">
+  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg></button>
+
+<footer class="bg-blue-900" id="bottom">
+	<div class="pt-2">
+		<div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-white text-sm flex-col md:flex-row max-w-6xl">
+			<div class="mt-2">© Copyright 2021 William Horning. All Rights Reserved.</div>
+		</div>
+	</div>
+</footer>
+  <script defer="">
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+  document.getElementById("light").style.display = "none";
+  document.getElementById("dark").style.display = "block";
+;
+
+} else {
+  document.documentElement.classList.remove('dark')
+    document.getElementById("light").style.display = "block";
+  document.getElementById("dark").style.display = "none";
+;
+
+}
+const toggle = () => {
+  if (localStorage.theme == 'dark') {
+// Whenever the user explicitly chooses light mode
+  localStorage.theme = 'light'
+  document.documentElement.classList.remove('dark')
+    document.getElementById("light").style.display = "block";
+  document.getElementById("dark").style.display = "none";
+
+
+} else {
+// Whenever the user explicitly chooses dark mode
+  localStorage.theme = 'dark'
+  document.documentElement.classList.add('dark')
+  document.getElementById("light").style.display = "none";
+  document.getElementById("dark").style.display = "block";
+
+
+}
+}
+
+document.getElementById("toggle").addEventListener("click", toggle);
+// Whenever the user explicitly chooses to respect the OS preference
+</script>
+</footer>
+<script src="/js/main.js">
+</script>
+<!-- Cloudflare Web Analytics --><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;fece00312c024f979c888667fa0bb584&quot;}"></script><!-- End Cloudflare Web Analytics -->
+</body></html>
