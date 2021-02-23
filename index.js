@@ -3,7 +3,7 @@ const _$ = require("bijou.js")
 module.exports = function(host, res, req, error, version, ejs){
 	path = req.originalUrl
 	if (fs.existsSync(`${__dirname}/${path}.md`)) {
-		md = fs.readFileSync(`blog/${path}.md`, 'utf8')
+		md = fs.readFileSync(`${__dirname}/${path}.md`, 'utf8')
 		html = _$.markdownToHTML(md)
 		ejs.renderFile(`${__dirname}/index.ejs`, {html:html}, {}, function(err, str){
 			res.send(str)
