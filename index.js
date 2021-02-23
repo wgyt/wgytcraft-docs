@@ -1,4 +1,5 @@
+const _$ = require("bijou.js")
 module.exports = function(host, res, req, error, version, ejs){
 	path = req.originalUrl
-	res.send('retronhosting is partnering with wgytcraft')
+	res.send(_$.markdownToHTML("# big text"))
 }
