@@ -1,2 +1,2 @@
 # big funnies are really funny so heres a funny
-## if my hair is pink, my hair is pink :
+## if my hair is pink, my hair is pink :O
